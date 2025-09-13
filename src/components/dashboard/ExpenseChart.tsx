@@ -2,13 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { name: 'Jan', spending: 2800, budget: 3000 },
-  { name: 'Feb', spending: 3200, budget: 3000 },
-  { name: 'Mar', spending: 2900, budget: 3000 },
-  { name: 'Apr', spending: 3400, budget: 3000 },
-  { name: 'May', spending: 3100, budget: 3000 },
-  { name: 'Jun', spending: 3600, budget: 3000 },
-  { name: 'Jul', spending: 3247, budget: 3000 },
+  { name: 'Jan', spending: 232400, budget: 249000 },
+  { name: 'Feb', spending: 265600, budget: 249000 },
+  { name: 'Mar', spending: 240700, budget: 249000 },
+  { name: 'Apr', spending: 282200, budget: 249000 },
+  { name: 'May', spending: 257300, budget: 249000 },
+  { name: 'Jun', spending: 298800, budget: 249000 },
+  { name: 'Jul', spending: 269800, budget: 249000 },
 ];
 
 export const ExpenseChart = () => {
@@ -43,6 +43,7 @@ export const ExpenseChart = () => {
                   borderRadius: 'var(--radius)',
                   boxShadow: 'var(--shadow-medium)'
                 }}
+                formatter={(value: number) => [`₹${value.toLocaleString('en-IN')}`, value === data[0]?.spending ? 'Spending' : 'Budget']}
               />
               <Line 
                 type="monotone" 

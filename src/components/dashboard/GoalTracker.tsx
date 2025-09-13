@@ -8,8 +8,8 @@ const goals = [
   {
     id: 1,
     name: "Emergency Fund",
-    current: 5800,
-    target: 10000,
+    current: 481400,
+    target: 830000,
     deadline: "Dec 2024",
     category: "Safety Net",
     color: "secondary",
@@ -18,8 +18,8 @@ const goals = [
   {
     id: 2,
     name: "Vacation to Japan",
-    current: 2300,
-    target: 4500,
+    current: 190900,
+    target: 373500,
     deadline: "Jun 2025",
     category: "Travel",
     color: "accent",
@@ -28,8 +28,8 @@ const goals = [
   {
     id: 3,
     name: "New MacBook Pro",
-    current: 1400,
-    target: 2500,
+    current: 116200,
+    target: 207500,
     deadline: "Mar 2024",
     category: "Tech",
     color: "primary",
@@ -72,8 +72,8 @@ export const GoalTracker = () => {
                 </div>
               </div>
               <div className="text-right">
-                <p className="font-bold text-lg">${goal.current.toLocaleString()}</p>
-                <p className="text-xs text-muted-foreground">of ${goal.target.toLocaleString()}</p>
+                <p className="font-bold text-lg">₹{goal.current.toLocaleString('en-IN')}</p>
+                <p className="text-xs text-muted-foreground">of ₹{goal.target.toLocaleString('en-IN')}</p>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ export const GoalTracker = () => {
                 </span>
                 <div className="flex items-center gap-1 text-xs text-muted-foreground">
                   <TrendingUp className="w-3 h-3" />
-                  $250/month needed
+                  ₹20,750/month needed
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ export const GoalTracker = () => {
           </div>
           <Progress value={55} className="mt-2 h-2" />
           <p className="text-xs text-muted-foreground mt-2 text-center">
-            $9,500 saved toward $17,000 in goals
+            ₹7,88,500 saved toward ₹14,11,000 in goals
           </p>
         </div>
       </CardContent>

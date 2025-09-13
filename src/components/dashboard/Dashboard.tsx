@@ -44,7 +44,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Total Balance</p>
-                <p className="text-2xl font-bold text-primary">$12,584.50</p>
+                <p className="text-2xl font-bold text-primary">₹10,42,500</p>
                 <div className="flex items-center mt-2 text-sm">
                   <TrendingUp className="w-4 h-4 mr-1 text-success" />
                   <span className="text-success font-medium">+12.5%</span>
@@ -63,7 +63,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Monthly Spending</p>
-                <p className="text-2xl font-bold text-warning">$3,247.80</p>
+                <p className="text-2xl font-bold text-warning">₹2,69,800</p>
                 <div className="flex items-center mt-2 text-sm">
                   <TrendingDown className="w-4 h-4 mr-1 text-destructive" />
                   <span className="text-destructive font-medium">+8.2%</span>
@@ -82,7 +82,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Savings Goal</p>
-                <p className="text-2xl font-bold text-secondary">$8,500.00</p>
+                <p className="text-2xl font-bold text-secondary">₹7,05,500</p>
                 <div className="flex items-center mt-2">
                   <Progress value={68} className="flex-1 mr-2" />
                   <span className="text-sm font-medium text-secondary">68%</span>

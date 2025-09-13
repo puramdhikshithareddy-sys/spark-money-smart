@@ -2,12 +2,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 
 const data = [
-  { name: 'Food & Dining', value: 850, color: 'hsl(var(--destructive))' },
-  { name: 'Transportation', value: 320, color: 'hsl(var(--secondary))' },
-  { name: 'Shopping', value: 450, color: 'hsl(var(--primary))' },
-  { name: 'Entertainment', value: 280, color: 'hsl(var(--accent))' },
-  { name: 'Bills & Utilities', value: 540, color: 'hsl(var(--warning))' },
-  { name: 'Healthcare', value: 180, color: 'hsl(var(--muted-foreground))' },
+  { name: 'Food & Dining', value: 70550, color: 'hsl(var(--destructive))' },
+  { name: 'Transportation', value: 26560, color: 'hsl(var(--secondary))' },
+  { name: 'Shopping', value: 37350, color: 'hsl(var(--primary))' },
+  { name: 'Entertainment', value: 23240, color: 'hsl(var(--accent))' },
+  { name: 'Bills & Utilities', value: 44820, color: 'hsl(var(--warning))' },
+  { name: 'Healthcare', value: 14940, color: 'hsl(var(--muted-foreground))' },
 ];
 
 const RADIAN = Math.PI / 180;
@@ -66,7 +66,7 @@ export const ExpenseCategories = () => {
                   borderRadius: 'var(--radius)',
                   boxShadow: 'var(--shadow-medium)'
                 }}
-                formatter={(value: number) => [`$${value}`, 'Amount']}
+                formatter={(value: number) => [`₹${value.toLocaleString('en-IN')}`, 'Amount']}
               />
             </PieChart>
           </ResponsiveContainer>
@@ -82,7 +82,7 @@ export const ExpenseCategories = () => {
               <div className="min-w-0 flex-1">
                 <p className="text-xs font-medium truncate">{item.name}</p>
                 <div className="flex items-center gap-1">
-                  <span className="text-sm font-semibold">${item.value}</span>
+                  <span className="text-sm font-semibold">₹{item.value.toLocaleString('en-IN')}</span>
                   <span className="text-xs text-muted-foreground">
                     ({((item.value / total) * 100).toFixed(0)}%)
                   </span>

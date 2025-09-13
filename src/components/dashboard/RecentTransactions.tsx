@@ -16,7 +16,7 @@ const transactions = [
   {
     id: 1,
     description: "Starbucks Coffee",
-    amount: -8.45,
+    amount: -701.35,
     category: "Food & Dining",
     date: "Today",
     time: "2:30 PM",
@@ -27,7 +27,7 @@ const transactions = [
   {
     id: 2,
     description: "Salary Deposit",
-    amount: 3500.00,
+    amount: 290500.00,
     category: "Income",
     date: "Today",
     time: "9:00 AM",
@@ -37,8 +37,8 @@ const transactions = [
   },
   {
     id: 3,
-    description: "Gas Station",
-    amount: -45.80,
+    description: "Petrol Station",
+    amount: -3801.40,
     category: "Transportation",
     date: "Yesterday",
     time: "6:15 PM",
@@ -49,7 +49,7 @@ const transactions = [
   {
     id: 4,
     description: "Amazon Purchase",
-    amount: -89.99,
+    amount: -7467.17,
     category: "Shopping",
     date: "Yesterday",
     time: "3:22 PM",
@@ -60,7 +60,7 @@ const transactions = [
   {
     id: 5,
     description: "Steam Game",
-    amount: -29.99,
+    amount: -2489.17,
     category: "Entertainment",
     date: "2 days ago",
     time: "8:45 PM",
@@ -71,7 +71,7 @@ const transactions = [
   {
     id: 6,
     description: "Restaurant Dinner",
-    amount: -65.40,
+    amount: -5428.20,
     category: "Food & Dining",
     date: "2 days ago",
     time: "7:30 PM",
@@ -125,7 +125,7 @@ export const RecentTransactions = () => {
                 <p className={`font-bold ${
                   transaction.amount > 0 ? 'text-secondary' : 'text-foreground'
                 }`}>
-                  {transaction.amount > 0 ? '+' : ''}${Math.abs(transaction.amount).toFixed(2)}
+                  {transaction.amount > 0 ? '+' : ''}₹{Math.abs(transaction.amount).toLocaleString('en-IN')}
                 </p>
                 {transaction.amount > 0 && (
                   <ArrowDownLeft className="w-3 h-3 text-secondary inline ml-1" />

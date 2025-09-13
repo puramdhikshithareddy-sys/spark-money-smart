@@ -6,40 +6,40 @@ import { Settings, AlertTriangle, CheckCircle } from "lucide-react";
 const budgetCategories = [
   { 
     name: "Food & Dining", 
-    spent: 850, 
-    budget: 800, 
+    spent: 70550, 
+    budget: 66400, 
     percentage: 106,
     color: "destructive",
     trend: "over"
   },
   { 
     name: "Transportation", 
-    spent: 320, 
-    budget: 400, 
+    spent: 26560, 
+    budget: 33200, 
     percentage: 80,
     color: "secondary",
     trend: "good"
   },
   { 
     name: "Shopping", 
-    spent: 450, 
-    budget: 600, 
+    spent: 37350, 
+    budget: 49800, 
     percentage: 75,
     color: "primary",
     trend: "good"
   },
   { 
     name: "Entertainment", 
-    spent: 280, 
-    budget: 250, 
+    spent: 23240, 
+    budget: 20750, 
     percentage: 112,
     color: "warning",
     trend: "over"
   },
   { 
     name: "Bills & Utilities", 
-    spent: 540, 
-    budget: 600, 
+    spent: 44820, 
+    budget: 49800, 
     percentage: 90,
     color: "accent",
     trend: "good"
@@ -72,9 +72,9 @@ export const BudgetProgress = () => {
                 <span className={`text-sm font-semibold ${
                   category.percentage > 100 ? 'text-destructive' : 'text-foreground'
                 }`}>
-                  ${category.spent}
+                  ₹{category.spent.toLocaleString('en-IN')}
                 </span>
-                <span className="text-xs text-muted-foreground"> / ${category.budget}</span>
+                <span className="text-xs text-muted-foreground"> / ₹{category.budget.toLocaleString('en-IN')}</span>
               </div>
             </div>
             
@@ -97,7 +97,7 @@ export const BudgetProgress = () => {
                 </span>
                 {category.percentage > 100 && (
                   <span className="text-xs text-destructive font-medium">
-                    ${category.spent - category.budget} over
+                    ₹{(category.spent - category.budget).toLocaleString('en-IN')} over
                   </span>
                 )}
               </div>
@@ -112,7 +112,7 @@ export const BudgetProgress = () => {
           </div>
           <Progress value={87} className="mt-2 h-3" />
           <p className="text-xs text-muted-foreground mt-2 text-center">
-            $2,440 of $2,800 monthly budget used
+            ₹2,02,520 of ₹2,32,400 monthly budget used
           </p>
         </div>
       </CardContent>

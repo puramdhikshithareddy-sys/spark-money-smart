@@ -20,9 +20,9 @@ export const SpendingPrediction = () => {
               High Confidence
             </Badge>
           </div>
-          <p className="text-2xl font-bold text-accent mb-2">$3,847</p>
+          <p className="text-2xl font-bold text-accent mb-2">₹3,19,105</p>
           <p className="text-sm text-muted-foreground">
-            Based on current spending patterns, you're likely to exceed your budget by $847
+            Based on current spending patterns, you're likely to exceed your budget by ₹70,105
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export const SpendingPrediction = () => {
               <div>
                 <p className="text-sm font-medium text-secondary">Savings Opportunity</p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Switch to cooking at home 2 more days could save $186/month
+                  Switch to cooking at home 2 more days could save ₹15,438/month
                 </p>
               </div>
             </div>
