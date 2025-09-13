@@ -2,41 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Financial AI Tool Design System - Vibrant & Positive Colors */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Main Background */
+    --background: 220 20% 97%;
+    --foreground: 220 15% 15%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
 
+    /* Popovers */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Vibrant Teal/Blue */
+    --primary: 195 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 195 85% 65%;
+    --primary-dark: 195 85% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Fresh Green for Savings */
+    --secondary: 142 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 70% 60%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Purple/Pink for Highlights */
+    --accent: 280 60% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 280 60% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Warning/Spending - Warm Orange */
+    --warning: 35 85% 60%;
+    --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success - Emerald Green */
+    --success: 160 75% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Muted */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 60%;
 
-    --radius: 0.5rem;
+    /* Destructive */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 15% 90%;
+    --input: 220 15% 94%;
+    --ring: 195 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195 85% 55%), hsl(195 85% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 70% 50%), hsl(142 70% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 60% 60%), hsl(280 60% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(195 85% 55%), hsl(280 60% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(160 75% 45%), hsl(142 70% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 98%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(220 15% 85% / 0.3);
+    --shadow-medium: 0 8px 30px -4px hsl(220 15% 75% / 0.4);
+    --shadow-strong: 0 20px 50px -8px hsl(220 15% 65% / 0.5);
+    --shadow-glow: 0 0 30px hsl(195 85% 55% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +137,85 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Glass Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Gradient Cards */
+  .card-gradient {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Progress Animations */
+  .progress-fill {
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  /* Button Variants */
+  .btn-gradient-primary {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    transition: var(--transition-smooth);
+  }
+
+  .btn-gradient-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-gradient-secondary {
+    background: var(--gradient-secondary);
+    color: hsl(var(--secondary-foreground));
+  }
+
+  /* Chart Animations */
+  .chart-bar {
+    animation: chart-grow 0.8s ease-out;
+  }
+
+  @keyframes chart-grow {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--bar-height);
+    }
+  }
+
+  /* Pulse Animation */
+  .pulse-soft {
+    animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
   }
 }
